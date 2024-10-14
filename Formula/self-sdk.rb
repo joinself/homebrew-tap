@@ -4,15 +4,14 @@ class MyDownloadStrategy < CurlDownloadStrategy
     super
   end
 
-  def fetch(timeout: nil, **options)
-    opoo "Unhandled options in #{self.class}#fetch: #{options.keys.join(", ")}" unless options.empty?
-
+  def fetch(timeout: nil)
     puts "being"
     puts url
     puts name
     `curl -o foo.tar.gz #{url}`
     `tar -zxvf foo.tar.gz`
     puts Dir.pwd
+    puts meta.inspect
     puts "end"
 
     # downloads output to `temporary_path`

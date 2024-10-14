@@ -7,7 +7,7 @@ class MyDownloadStrategy < CurlDownloadStrategy
     @mirrors = meta.fetch(:mirrors, [])
   end
 
-  def fetch
+  def fetch()
     download_lock = LockFile.new(temporary_path.basename)
     download_lock.lock
 

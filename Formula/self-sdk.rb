@@ -1,4 +1,4 @@
-class SelfSDK < Formula
+class SelfSdk < Formula
   desc "Self SDK"
   homepage "https://www.joinself.com/"
   url "https://ftp.gnu.org/gnu/wget/wget-1.24.5.tar.gz"

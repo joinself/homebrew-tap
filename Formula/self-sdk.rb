@@ -11,7 +11,7 @@ class MyDownloadStrategy < CurlDownloadStrategy
     curl_download url, to: "rat.tar.gz"
     #curl_download url, to: temporary_path
     #`curl -o foo.tar.gz #{url}`
-    #`tar -zxvf foo.tar.gz`
+    `tar -zxvf rat.tar.gz`
     #puts Dir.pwd
     #puts meta.inspect
     puts "end"

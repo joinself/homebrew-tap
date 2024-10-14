@@ -8,7 +8,7 @@ class SelfSdk < Formula
   def install
     system "echo", "begin"
     system "ls -lah"
-    lib.install "libself_omemo.a"
+    lib.install "self-sdk-aarch64-apple-darwin-0.28.0/libself_sdk.a"
     system "echo", "end"
   end
 end

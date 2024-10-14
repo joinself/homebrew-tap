@@ -10,7 +10,6 @@ class MyDownloadStrategy < CurlDownloadStrategy
     puts "being"
     puts url
     puts name
-    puts options
     `curl -o foo.tar.gz #{url}`
     `tar -zxvf foo.tar.gz`
     puts "end"

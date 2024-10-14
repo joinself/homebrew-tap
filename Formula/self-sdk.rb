@@ -1,6 +1,6 @@
 class MyDownloadStrategy < CurlDownloadStrategy
 
-  def initialize()
+  def initialize(url, name, version, **meta)
     super
   end
 

@@ -2,7 +2,9 @@ class MyDownloadStrategy < CurlDownloadStrategy
   def fetch(timeout: nil, **options)
     #opoo "Unhandled options in #{self.class}#fetch: #{options.keys.join(", ")}" unless options.empty?
 
-    puts "hit"
+    puts "being"
+    puts options
+    puts "end"
 
     # downloads output to `temporary_path`
   end

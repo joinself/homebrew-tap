@@ -1,11 +1,12 @@
 class SelfSdk < Formula
   desc "Self SDK"
   homepage "https://www.joinself.com/"
-  url "https://ftp.gnu.org/gnu/wget/wget-1.24.5.tar.gz"
-  sha256 "fa2dc35bab5184ecbc46a9ef83def2aaaa3f4c9f3c97d4bd19dcb07d4da637de"
+  url "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/artifacts/files/self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"
   license "MIT"
 
   def install
-    system "echo", "hello"
+    system "echo", "begin"
+    system "ls -lah"
+    system "echo", "end"
   end
 end

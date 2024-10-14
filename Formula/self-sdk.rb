@@ -8,6 +8,8 @@ class MyDownloadStrategy < CurlDownloadStrategy
     #opoo "Unhandled options in #{self.class}#fetch: #{options.keys.join(", ")}" unless options.empty?
 
     puts "being"
+    puts url
+    puts name
     puts options
     puts "end"
 

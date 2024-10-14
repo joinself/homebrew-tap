@@ -1,3 +1,5 @@
+require 'digest'
+
 class MyDownloadStrategy < CurlDownloadStrategy
 
   def initialize(url, name, version, **meta)
@@ -33,6 +35,8 @@ class SelfSdk < Formula
   def install
     system "echo", "begin"
     system "pwd"
+    url_sha256 = Digest::SHA256.hexdigest(url)
+    puts url_sha256
     puts buildpath
     puts Dir.pwd
     system "ls -lah"

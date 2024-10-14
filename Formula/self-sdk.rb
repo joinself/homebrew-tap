@@ -12,6 +12,7 @@ class MyDownloadStrategy < CurlDownloadStrategy
     puts name
     `curl -o foo.tar.gz #{url}`
     `tar -zxvf foo.tar.gz`
+    Dir.pwd
     puts "end"
 
     # downloads output to `temporary_path`

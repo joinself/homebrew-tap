@@ -8,10 +8,11 @@ class MyDownloadStrategy < CurlDownloadStrategy
     puts "being"
     puts url
     puts name
-    `curl -o foo.tar.gz #{url}`
-    `tar -zxvf foo.tar.gz`
-    puts Dir.pwd
-    puts meta.inspect
+    curl_download url to: temporary_path
+    #`curl -o foo.tar.gz #{url}`
+    #`tar -zxvf foo.tar.gz`
+    #puts Dir.pwd
+    #puts meta.inspect
     puts "end"
 
     # downloads output to `temporary_path`

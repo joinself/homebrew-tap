@@ -8,7 +8,7 @@ class MyDownloadStrategy < CurlDownloadStrategy
     puts "being"
     puts url
     puts name
-    curl_download url, to: rat.tar.gz
+    curl_download url, to: "rat.tar.gz"
     #curl_download url, to: temporary_path
     #`curl -o foo.tar.gz #{url}`
     #`tar -zxvf foo.tar.gz`

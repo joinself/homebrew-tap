@@ -51,7 +51,7 @@ class SelfSdk < Formula
     puts "pkg2: #{pkg2}"
 
     #File.rename(pkg, "foo.tar.gz")
-    FileUtils.cp(pkg2, 'foo.tar.gz')
+    FileUtils.cp(pkg2, buildpath/"foo.tar.gz")
 
     puts buildpath
     puts Dir[buildpath]

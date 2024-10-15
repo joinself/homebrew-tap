@@ -52,7 +52,9 @@ class SelfSdk < Formula
 
     #File.rename(pkg, "foo.tar.gz")
     mkdir(buildpath/"test")
-    mv(pkg2, buildpath/"foo.tar.gz")
+    mv(pkg2, "foo.tar.gz")
+
+    system "tar", "-zxvf", "foo.tar.gz"
 
     `curl -o bar.tar.gz "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/artifacts/files/self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"`
 

@@ -53,6 +53,8 @@ class SelfSdk < Formula
     mkdir(buildpath/"test")
     mv(pkg2, buildpath/"foo.tar.gz")
 
+    `tar -zxvf #{pkg2} -C #{buildpath}`
+
     puts buildpath
     puts Dir["#{buildpath}/"]
     puts Dir.pwd

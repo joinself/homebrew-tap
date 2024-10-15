@@ -12,8 +12,8 @@ class SelfSdk < Formula
     url_sha256 = Digest::SHA256.hexdigest(url)
 
     if OS.linux?
-      if Hardware::CPU.arm?
-        puts "I am arm"
+      if Hardware::CPU.intel?
+        puts "I am intel"
       end
     end
 

@@ -54,6 +54,7 @@ class SelfSdk < Formula
     FileUtils.cp(pkg2, 'foo.tar.gz')
 
     puts buildpath
+    puts Dir[buildpath]
     puts Dir.pwd
     system "ls -lah"
     lib.install "self-sdk-aarch64-apple-darwin-0.28.0/libself_sdk.a"

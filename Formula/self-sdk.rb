@@ -3,25 +3,39 @@ require 'digest'
 class SelfSdk < Formula
   desc "Self SDK"
   homepage "https://www.joinself.com/"
-  url "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/artifacts/files/self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"
-  sha256 "d86798f4dd32ad2841fb10819f20446d43abdeb14c5fb4a99e589c1d474189e7"
+  url "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/artifacts/files/self-sdk-homebrew:0.29.0:self-sdk-0.29.0-homebrew.tar.gz:download"
+  sha256 "0000a572730b8f1802b34d7842e145c3d625553a9d7380a1faec16e438ec3522"
   license "MIT"
 
   def install
-    url = "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/artifacts/files/self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"
+    url = "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/artifacts/files/self-sdk-homebrew:0.29.0:self-sdk-0.29.0-homebrew.tar.gz:download"
     url_sha256 = Digest::SHA256.hexdigest(url)
-
-    if OS.linux?
-      if Hardware::CPU.intel?
-        puts "I am intel"
-      end
-    end
-
-    pkg = HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"
+    pkg = HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk-homebrew:0.29.0:self-sdk-0.29.0-homebrew.tar.gz:download"
     mv(pkg, "self-sdk.tar.gz")
 
-    system "tar", "-zxvf", "self-sdk.tar.gz"
-    lib.install "self-sdk-aarch64-apple-darwin-0.28.0/libself_sdk.a"
-    include.install "self-sdk-aarch64-apple-darwin-0.28.0/self-sdk.h"
+    #if OS.mac?
+    if OS.linux?
+      arch = "aarch64"
+
+      if Hardware::CPU.intel?
+        arch = "x86_64"
+      end
+    
+      puts arch
+      system "tar", "-zxvf", "self-sdk.tar.gz"
+      lib.install "self-sdk-#{arch}-apple-darwin-0.29.0/libself_sdk.a"
+      include.install "self-sdk-#{arch}-apple-darwin-0.29.0/self-sdk.h"
+    end
+
+    # if OS.linux?
+    #   if Hardware::CPU.arm?
+    #     puts "I am arm"
+    #     arch = "aarch64"
+    #   end
+    #   if Hardware::CPU.intel?
+    #     puts "I am intel"
+    #     arch = "x86_64"
+    #   end
+    # end
   end
 end

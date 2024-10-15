@@ -1,5 +1,4 @@
 require 'digest'
-require 'fileutils'
 
 class MyDownloadStrategy < CurlDownloadStrategy
 
@@ -52,7 +51,7 @@ class SelfSdk < Formula
 
     #File.rename(pkg, "foo.tar.gz")
     mkdir(buildpath/"test")
-    FileUtils.cp(pkg2, buildpath/"foo.tar.gz")
+    cp(pkg2, buildpath/"foo.tar.gz")
 
     puts buildpath
     puts Dir[buildpath]

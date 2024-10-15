@@ -41,6 +41,7 @@ class SelfSdk < Formula
     url_sha256 = Digest::SHA256.hexdigest(url)
     puts url_sha256
 
+    puts HOMEBREW_CACHE
 
     pkg = Pathname.glob(HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download")
     puts "pkg: #{pkg.dirname}/#{pkg.basename}"

@@ -59,6 +59,7 @@ class SelfSdk < Formula
     `tar -zxvf bar.tar.gz`
 
     `pwd`
+    system "pwd"
     `ls -lah`
 
     # puts buildpath

@@ -58,6 +58,8 @@ class SelfSdk < Formula
 
     `tar -zxvf bar.tar.gz`
 
+    lib.install "self-sdk-aarch64-apple-darwin-0.28.0/libself_sdk.a"
+
     `pwd`
     system "pwd"
     `ls -lah`

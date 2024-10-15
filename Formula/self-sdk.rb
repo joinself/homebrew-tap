@@ -43,10 +43,12 @@ class SelfSdk < Formula
 
     puts HOMEBREW_CACHE
 
-    pkg = Pathname.glob(HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download")
-    puts "pkg: #{pkg.dirname}/#{pkg.basename}"
+    #pkg = Pathname.glob(HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download")
+    #puts "pkg: #{pkg.dirname}/#{pkg.basename}"
 
     pkg2 = HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"
+
+    puts "pkg2: #{pkg2}"
 
     #File.rename(pkg, "foo.tar.gz")
     FileUtils.cp(pkg2, 'foo.tar.gz')

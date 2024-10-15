@@ -54,7 +54,7 @@ class SelfSdk < Formula
     cp(pkg2, buildpath/"foo.tar.gz")
 
     puts buildpath
-    puts Dir[buildpath]
+    puts Dir["#{buildpath}/"]
     puts Dir.pwd
     system "ls -lah #{buildpath}"
     lib.install "self-sdk-aarch64-apple-darwin-0.28.0/libself_sdk.a"

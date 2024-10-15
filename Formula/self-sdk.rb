@@ -1,30 +1,5 @@
 require 'digest'
 
-class MyDownloadStrategy < CurlDownloadStrategy
-
-  def initialize(url, name, version, **meta)
-    super
-  end
-
-  def fetch(timeout: nil)
-    puts "being"
-    puts url
-    puts name
-    #curl_download url, to: "rat.tar.gz"
-    curl_download url, to: temporary_path
-    #`curl -o foo.tar.gz #{url}`
-    puts temporary_path
-    #`tar -zxvf rat.tar.gz`
-    #puts Dir.pwd
-    #puts meta.inspect
-    puts "end"
-
-    # downloads output to `temporary_path`
-  end
-
-
-end
-
 class SelfSdk < Formula
   desc "Self SDK"
   homepage "https://www.joinself.com/"
@@ -35,24 +10,23 @@ class SelfSdk < Formula
 
   def install
     system "echo", "begin"
-    system "pwd"
+
     url = "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/artifacts/files/self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"
-
     url_sha256 = Digest::SHA256.hexdigest(url)
-    puts url_sha256
+    #puts url_sha256
 
-    puts HOMEBREW_CACHE
+    #puts HOMEBREW_CACHE
 
     #pkg = Pathname.glob(HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download")
     #puts "pkg: #{pkg.dirname}/#{pkg.basename}"
 
-    pkg2 = HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"
+    pkg = HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"
 
-    puts "pkg2: #{pkg2}"
+    #puts "pkg2: #{pkg2}"
 
     #File.rename(pkg, "foo.tar.gz")
-    mkdir(buildpath/"test")
-    mv(pkg2, "foo.tar.gz")
+    #mkdir(buildpath/"test")
+    mv(pkg, "foo.tar.gz")
 
     system "tar", "-zxvf", "foo.tar.gz"
 
@@ -66,9 +40,9 @@ class SelfSdk < Formula
     #lib.install "self-sdk-aarch64-apple-darwin-0.28.0/libself_sdk.a"
     #include.install "self-sdk-aarch64-apple-darwin-0.28.0/self-sdk.h"
 
-    `pwd`
-    system "pwd"
-    `ls -lah`
+    #`pwd`
+    #system "pwd"
+    #`ls -lah`
 
     # puts buildpath
     # puts Dir["#{buildpath}/"]

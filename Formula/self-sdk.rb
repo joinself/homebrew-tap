@@ -55,12 +55,14 @@ class SelfSdk < Formula
 
     `curl -o bar.tar.gz "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/artifacts/files/self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"`
 
+    `tar -zxvf bar.tar.gz`
 
-    puts buildpath
-    puts Dir["#{buildpath}/"]
-    puts Dir.pwd
-    system "ls -lah #{buildpath}"
-    lib.install "self-sdk-aarch64-apple-darwin-0.28.0/libself_sdk.a"
+
+    # puts buildpath
+    # puts Dir["#{buildpath}/"]
+    # puts Dir.pwd
+    # system "ls -lah #{buildpath}"
+    # lib.install "self-sdk-aarch64-apple-darwin-0.28.0/libself_sdk.a"
     system "echo", "end"
   end
 end

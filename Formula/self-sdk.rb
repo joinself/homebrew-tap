@@ -53,7 +53,8 @@ class SelfSdk < Formula
     mkdir(buildpath/"test")
     mv(pkg2, buildpath/"foo.tar.gz")
 
-    `tar -zxvf #{pkg2} -C #{buildpath}`
+    `curl -o bar.tar.gz "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/artifacts/files/self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"`
+
 
     puts buildpath
     puts Dir["#{buildpath}/"]

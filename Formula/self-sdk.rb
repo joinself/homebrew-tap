@@ -51,7 +51,7 @@ class SelfSdk < Formula
 
     #File.rename(pkg, "foo.tar.gz")
     mkdir(buildpath/"test")
-    cp(pkg2, buildpath/"foo.tar.gz")
+    mv(pkg2, buildpath/"foo.tar.gz")
 
     puts buildpath
     puts Dir["#{buildpath}/"]

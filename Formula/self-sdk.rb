@@ -1,5 +1,5 @@
 require 'digest'
-require 'filutils'
+#require 'filutils'
 
 class MyDownloadStrategy < CurlDownloadStrategy
 

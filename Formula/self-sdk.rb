@@ -12,7 +12,9 @@ class SelfSdk < Formula
     url_sha256 = Digest::SHA256.hexdigest(url)
 
     if OS.linux?
-      puts "I am a mac"
+      if Hardware::CPU.arm?
+        puts "I am arm"
+      end
     end
 
     pkg = HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk:0.28.0:self-sdk-aarch64-apple-darwin-0.28.0.tar.gz:download"

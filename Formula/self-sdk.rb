@@ -38,11 +38,11 @@ class SelfSdk < Formula
       wd = ""
     end
 
-    if OS.linux? && Hardware::CPU.intel?
-      url = "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/releases/files/self-c-sdk:0.31.0:self-c-sdk_0.31.0_linux_amd64.tar.gz:download"
-      filename = "self-c-sdk:0.31.0:self-c-sdk_0.31.0_linux_amd64.tar.gz:download"
-      wd = "self-sdk-x86_64-unknown-linux-gnu-0.31.0"
-    end
+    # if OS.linux? && Hardware::CPU.intel?
+    #   url = "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/releases/files/self-c-sdk:0.31.0:self-c-sdk_0.31.0_linux_amd64.tar.gz:download"
+    #   filename = "self-c-sdk:0.31.0:self-c-sdk_0.31.0_linux_amd64.tar.gz:download"
+    #   wd = "self-sdk-x86_64-unknown-linux-gnu-0.31.0"
+    # end
 
     if OS.linux? && Hardware::CPU.arm?
       url = "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/releases/files/self-c-sdk:0.31.0:self-c-sdk_0.31.0_linux_arm64.tar.gz:download"
@@ -54,9 +54,8 @@ class SelfSdk < Formula
     # pkg = HOMEBREW_CACHE/"downloads/#{url_sha256}--#{filename}"
     # mv(pkg, "self-c-sdk.tar.gz")
 
-    system "ls"
     #system "tar", "-zxvf", "self-c-sdk.tar.gz"
-    lib.install "#{wd}/libself_sdk.a"
-    include.install "#{wd}/self-sdk.h"
+    lib.install "libself_sdk.a"
+    include.install "self-sdk.h"
   end
 end

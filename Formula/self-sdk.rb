@@ -42,7 +42,7 @@ class SelfSdk < Formula
       arch ""
     end
 
-    puts "url: #{self.url}"
+    puts "homepage: #{self.homepage}"
 
     url = "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/releases/files/self-c-sdk:0.31.0:self-c-sdk_0.31.0_linux_amd64.tar.gz:download"
     url_sha256 = Digest::SHA256.hexdigest(url)

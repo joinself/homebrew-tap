@@ -35,37 +35,22 @@ class SelfSdk < Formula
     end
 
     if OS.linux? && Hardware::CPU.intel?
-      arch = "x86_64"
+      wd = "self-sdk-x86_64-unknown-linux-gnu-0.31.0"
     end
 
     if OS.linux? && Hardware::CPU.arm?
       arch ""
     end
 
+    puts "url: #{url}"
+
     url = "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/releases/files/self-c-sdk:0.31.0:self-c-sdk_0.31.0_linux_amd64.tar.gz:download"
-    #url = "https://artifactregistry.googleapis.com/download/v1/projects/principal-oxide-204416/locations/europe/repositories/artifacts/files/self-sdk-homebrew:0.29.0:self-sdk-0.29.0-homebrew.tar.gz:download"
     url_sha256 = Digest::SHA256.hexdigest(url)
     pkg = HOMEBREW_CACHE/"downloads/#{url_sha256}--self-c-sdk:0.31.0:self-c-sdk_0.31.0_linux_amd64.tar.gz:download"
-    #pkg = HOMEBREW_CACHE/"downloads/#{url_sha256}--self-sdk-homebrew:0.29.0:self-sdk-0.29.0-homebrew.tar.gz:download"
     mv(pkg, "self-c-sdk.tar.gz")
 
     system "tar", "-zxvf", "self-c-sdk.tar.gz"
-    lib.install "self-sdk-x86_64-unknown-linux-gnu-0.31.0/libself_sdk.a"
-    include.install "self-sdk-x86_64-unknown-linux-gnu-0.31.0/self-sdk.h"
-    #lib.install "self-sdk-#{arch}-apple-darwin-0.31.0/libself_sdk.a"
-    #include.install "self-sdk-#{arch}-apple-darwin-0.31.0/self-sdk.h"
-
-    #if OS.mac?
-    # if OS.linux?
-    #   arch = "aarch64"
-    #
-    #   if Hardware::CPU.intel?
-    #     arch = "x86_64"
-    #   end
-    #
-    #   system "tar", "-zxvf", "self-c-sdk.tar.gz"
-    #   lib.install "self-sdk-#{arch}-apple-darwin-0.29.0/libself_sdk.a"
-    #   include.install "self-sdk-#{arch}-apple-darwin-0.29.0/self-sdk.h"
-    # end
+    lib.install "#{wd}/libself_sdk.a"
+    include.install "#{wd}/self-sdk.h"
   end
 end

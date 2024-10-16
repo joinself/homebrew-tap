@@ -55,7 +55,7 @@ class SelfSdk < Formula
     # mv(pkg, "self-c-sdk.tar.gz")
 
     system "ls"
-    system "tar", "-zxvf", "self-c-sdk.tar.gz"
+    #system "tar", "-zxvf", "self-c-sdk.tar.gz"
     lib.install "#{wd}/libself_sdk.a"
     include.install "#{wd}/self-sdk.h"
   end

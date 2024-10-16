@@ -50,8 +50,10 @@ class SelfSdk < Formula
     mv(pkg, "self-c-sdk.tar.gz")
 
     system "tar", "-zxvf", "self-c-sdk.tar.gz"
-    lib.install "self-sdk-#{arch}-apple-darwin-0.31.0/libself_sdk.a"
-    include.install "self-sdk-#{arch}-apple-darwin-0.31.0/self-sdk.h"
+    lib.install "self-sdk-x86_64-unknown-linux-gnu-0.31.0/libself_sdk.a"
+    include.install "self-sdk-x86_64-unknown-linux-gnu-0.31.0/self-sdk.h"
+    #lib.install "self-sdk-#{arch}-apple-darwin-0.31.0/libself_sdk.a"
+    #include.install "self-sdk-#{arch}-apple-darwin-0.31.0/self-sdk.h"
 
     #if OS.mac?
     # if OS.linux?

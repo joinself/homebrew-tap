@@ -21,21 +21,9 @@ class SelfSdk < Formula
         arch = "x86_64"
       end
     
-      puts arch
       system "tar", "-zxvf", "self-sdk.tar.gz"
       lib.install "self-sdk-#{arch}-apple-darwin-0.29.0/libself_sdk.a"
       include.install "self-sdk-#{arch}-apple-darwin-0.29.0/self-sdk.h"
     end
-
-    # if OS.linux?
-    #   if Hardware::CPU.arm?
-    #     puts "I am arm"
-    #     arch = "aarch64"
-    #   end
-    #   if Hardware::CPU.intel?
-    #     puts "I am intel"
-    #     arch = "x86_64"
-    #   end
-    # end
   end
 end

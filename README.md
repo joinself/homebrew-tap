@@ -13,3 +13,5 @@ You can also only add the tap which makes formula's within it available in searc
 ```sh
 brew tap joinself/tap
 ```
+
+done

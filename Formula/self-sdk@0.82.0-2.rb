@@ -1,4 +1,4 @@
-class SelfSdkAT0820-2 < Formula
+class SelfSdkAT08202 < Formula
   desc "Self SDK"
   homepage "https://www.joinself.com/"
   version "0.82.0-2"

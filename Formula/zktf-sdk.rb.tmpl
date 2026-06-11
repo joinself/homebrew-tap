@@ -1,0 +1,26 @@
+class ZktfSdkAT000 < Formula
+  desc "ZKTF SDK"
+  homepage "https://www.joinself.com/"
+  version "0.0.0"
+  license "MIT"
+
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://download.joinself.com/zktf-sdk/zktf-sdk-aarch64-apple-darwin-0.0.0.tar.gz"
+    sha256 "mac-arm-sha"
+  end
+
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://download.joinself.com/zktf-sdk/zktf-sdk-x86_64-unknown-linux-gnu-0.0.0.tar.gz"
+    sha256 "linux-intel-sha"
+  end
+
+  if OS.linux? && Hardware::CPU.arm?
+    url "https://download.joinself.com/zktf-sdk/zktf-sdk-aarch64-unknown-linux-gnu-0.0.0.tar.gz"
+    sha256 "linux-arm-sha"
+  end
+
+  def install
+    lib.install "libzktf_sdk.a"
+    include.install "zktf-sdk.h"
+  end
+end

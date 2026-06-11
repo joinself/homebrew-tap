@@ -1,0 +1,26 @@
+class ZktfSimAT000 < Formula
+  desc "ZKTF Sim"
+  homepage "https://www.joinself.com/"
+  version "0.0.0"
+  license "MIT"
+
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://download.joinself.com/zktf-sim/zktf-sim-0.0.0-darwin-arm64.tar.gz"
+    sha256 "mac-arm-sha"
+  end
+
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://download.joinself.com/zktf-sim/zktf-sim-0.0.0-linux-amd64.tar.gz"
+    sha256 "linux-intel-sha"
+  end
+
+  if OS.linux? && Hardware::CPU.arm?
+    url "https://download.joinself.com/zktf-sim/zktf-sim-0.0.0-linux-arm64.tar.gz"
+    sha256 "linux-arm-sha"
+  end
+
+  def install
+    lib.install "libzktf_sim.a"
+    include.install "zktf-sim.h"
+  end
+end

@@ -1,4 +1,4 @@
-class ZktfSdkATa31d1a36e7b667853c08637ed3ff7ef4afa8327d < Formula
+class ZktfSdkATA31d1a36e7b667853c08637ed3ff7ef4afa8327d < Formula
   desc "ZKTF SDK"
   homepage "https://www.joinself.com/"
   version "a31d1a36e7b667853c08637ed3ff7ef4afa8327d"

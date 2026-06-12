@@ -5,17 +5,17 @@ class ZktfSdkAT000 < Formula
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://download.joinself.com/zktf-sdk/zktf-sdk-0.0.0-darwin-arm64.tar.gz"
+    url "https://download.joinself.com/zktf-sdk/zktf-sdk-aarch64-apple-darwin-0.0.0.tar.gz"
     sha256 "mac-arm-sha"
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url "https://download.joinself.com/zktf-sdk/zktf-sdk-0.0.0-linux-amd64.tar.gz"
+    url "https://download.joinself.com/zktf-sdk/zktf-sdk-x86_64-unknown-linux-gnu-0.0.0.tar.gz"
     sha256 "linux-intel-sha"
   end
 
   if OS.linux? && Hardware::CPU.arm?
-    url "https://download.joinself.com/zktf-sdk/zktf-sdk-0.0.0-linux-arm64.tar.gz"
+    url "https://download.joinself.com/zktf-sdk/zktf-sdk-aarch64-unknown-linux-gnu-0.0.0.tar.gz"
     sha256 "linux-arm-sha"
   end
 
